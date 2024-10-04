@@ -1,5 +1,6 @@
 const initialState = {
   cart: [],
+  products : fetch("https://dummyjson.com/products")
 };
 
 const rootReducer = (state = initialState, action) => {

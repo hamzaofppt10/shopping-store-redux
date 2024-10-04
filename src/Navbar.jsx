@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [totalItems , setTotalItems] = useState()
-    const cart = useSelector(state => state.cart)
+    const cart = useSelector(state => state.cart.cart)
 
     useEffect(() =>{
         setTotalItems(cart.reduce((total , acc) => total + acc.quantity , 0))

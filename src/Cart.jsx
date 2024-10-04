@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, deleteProduct } from '../redux/actions';
+import { increment, decrement, deleteProduct } from './redux/actions';
 import { Minus, Plus, Trash } from 'lucide-react';
 
 const Cart = () => {
     const [total , setTotal] = useState()
 
-  const cart = useSelector(state => state.cart);
+  const cart = useSelector(state => state.cart.cart);
   const dispatch = useDispatch();
 
   const handleIncrement = (id) => {

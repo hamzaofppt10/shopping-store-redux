@@ -18,3 +18,20 @@ export const deleteProduct = id => ({
     payload: id,
   });
   
+
+  // redux/actions.js
+export const fetchProducts = () => {
+  return (dispatch) => {
+      fetch("https://dummyjson.com/products")
+          .then((res) => res.json())
+          .then((data) => {
+              dispatch({
+                  type: 'SET_PRODUCTS',
+                  payload: data.products,
+              });
+          })
+          .catch((error) => {
+              console.error("Error fetching products:", error);
+          });
+  };
+};
